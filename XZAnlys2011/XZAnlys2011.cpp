@@ -12,20 +12,20 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
-    // n      : Çubuk Sayýsý
-    // x      : Düðüm Sayýsý
-    // sd     : Serbestlik Sayýsý
-    // *R     : Refefans Düðüm No Vektörü
-    // *K     : Referans Olmayan Düðüm No Vektörü
-    // sno    : Serbestlik Numarasý
-    // yss    : Yüklü Seerbestlik Sayýsý
+    // n      : Cubuk Sayisi
+    // x      : Dugum Sayisi
+    // sd     : Serbestlik Sayisi
+    // *R     : Refefans Dugum No Vektoru
+    // *K     : Referans Olmayan Dugum No Vektoru
+    // sno    : Serbestlik Numarasi
+    // yss    : Yuklu Seerbestlik Sayisi
     // A      : Alan
-    // E      : Elastisite Modülü
-    // I      : Atalaet Momenti
-    // *Dx    : Düðüm Noktasýnýn X Koordinat Vektörü
-    // *Dy    : Düðüm Noktasýnýn Y Koordinat Vektörü
-    // *delx  : X Koordinatlarý Arasýndaki Fark Vektörü
-    // *dely  : Y Koordinatlar Arasýndaki Fark Vektörü
+    // E      : Elastisite Modulu
+    // I      : Atalet Momenti
+    // *Dx    : Dugum Noktasinin X Koordinat Vektoru
+    // *Dy    : Dugum Noktasinin Y Koordinat Vektoru
+    // *delx  : X Koordinatlari Arasindaki Fark Vektoru
+    // *dely  : Y Koordinatlar Arasindaki Fark Vektoru
 
     int n, i, i1, j, j1, x, * R, * K, sd, * u, * v, * teta, ** Dj, sno, pivotkol, * Xizle, Xyeni, rep, yss;
     double* A, * E, * I, * Dx, * Dy, * Aci, * L, * delx, * dely, ** Sj, ** S, * P, * N, * W, * a, ** Q, * Qj, * Qt, * Pj, * X, pivot, eksiilecarp, rep1, ** qussu, ** qussucizgi, ** qcubuk, ** Djyeni, * nj;
@@ -37,8 +37,8 @@ int main(int argc, char* argv[])
     uzunlukbrm = new char[karakter];
     kuvvetbrm = new char[karakter];
     cout << endl << endl;
-    //Acýklama Basla
-    for (i = 0; i < 3; i++)   //dikey sayaç
+    //Aciklama Basla
+    for (i = 0; i < 3; i++)   //dikey sayac
     {
         if (i > 0 && i < 2)
         {
@@ -54,12 +54,12 @@ int main(int argc, char* argv[])
         }
         else
         {
-            for (j = 0; j < 77; j++)  //yatay sayaç
+            for (j = 0; j < 77; j++)  //yatay sayac
                 cout << "*";
         }
         cout << endl;
     }
-    //Acýklama Son
+    //Aciklama Son
     cout << endl << endl;
     cout << "Islem Sonuclarinin Saklanacagi Dosyaya Ad Verin (Uzantisiyla Birlikte) = " << endl;
     cin >> yazad;
@@ -76,34 +76,34 @@ int main(int argc, char* argv[])
     cout << endl << "Yapacaginiz Islemdeki Kuvvet Birimini Girin = " << endl;
     cin >> kuvvetbrm;
     //Kimlik Basla
-    for (i = 0; i < 3; i++)   //dikey sayaç
+    for (i = 0; i < 3; i++)   //dikey sayac
     {
         if (i > 0 && i < 2)
         {
-            yaz << "*       Ýskender ATALAY         *" << endl;
-            yaz << "*      Ýnþaat  Mühendisi        *" << endl;
-            yaz << "* Elektrik-Elektronik Mühendisi *" << endl;
+            yaz << "*       Iskender ATALAY         *" << endl;
+            yaz << "*      Insaat  Muhendisi        *" << endl;
+            yaz << "* Elektrik-Elektronik Muhendisi *" << endl;
             yaz << "* XZ Corporation'da Founder,CEO *" << endl;
             yaz << "*       www.xzcorp.com          *" << endl;
             yaz << "*  www.facebook.com/XZCorp      *";
         }
         else
         {
-            for (j = 0; j < 33; j++)  //yatay sayaç
+            for (j = 0; j < 33; j++)  //yatay sayaC
                 yaz << "*";
         }
         yaz << endl;
     }
     //Kimlik Son
     yaz << endl;
-    yaz << "Yapýlan Ýþlemdeki Uzunluk Birimi = " << uzunlukbrm << endl;
-    yaz << "Yapýlan Ýþlemdeki Kuvvet Birimi = " << kuvvetbrm << endl << endl;
+    yaz << "Yapilan Islemdeki Uzunluk Birimi = " << uzunlukbrm << endl;
+    yaz << "Yapilan Islemdeki Kuvvet Birimi = " << kuvvetbrm << endl << endl;
     cout << endl << "Cubuk Sayisini Girin " << endl;
     cin >> n;
-    yaz << "Çubuk Sayýsý = " << n << endl;
+    yaz << "Cubuk Sayisi = " << n << endl;
     cout << endl << "Dugum Sayisi Girin " << endl;
     cin >> x;
-    yaz << "Düðüm Sayýsý= " << x << endl;
+    yaz << "Dugum Sayisi= " << x << endl;
     cout << endl << "Serbestlik Derecesini Girin " << endl;
     cin >> sd;
     yaz << "Serbestlik Derecesi = " << sd << endl;
@@ -168,7 +168,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Cubuk Bilgileri = " << endl << endl;
-    yaz << "Çubuk Bilgileri = " << endl << endl;
+    yaz << "Cubuk Bilgileri = " << endl << endl;
     cout << setw(16) << "i";
     cout << setw(5) << "k";
     cout << setw(8) << "A(" << uzunlukbrm << "^2)";
@@ -189,7 +189,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < n; i++)
     {
         cout << i + 1 << ". Cubuk = ";
-        yaz << i + 1 << ". Çubuk = ";
+        yaz << i + 1 << ". Cubuk = ";
         cout << fixed << setprecision(6) << setw(5) << R[i];
         cout << fixed << setprecision(6) << setw(5) << K[i];
         cout << fixed << setprecision(6) << setw(12) << A[i];
@@ -212,7 +212,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Cubuk Yuk Bilgileri = " << endl << endl;
-    yaz << "Çubuk Yük Bilgileri = " << endl << endl;
+    yaz << "Cubuk Yuk Bilgileri = " << endl << endl;
     cout << setw(18) << "W(" << kuvvetbrm << "/" << uzunlukbrm << ")";
     cout << setw(9) << "P(" << kuvvetbrm << ")";
     cout << setw(9) << "N(" << kuvvetbrm << ")";
@@ -233,7 +233,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < n; i++)
     {
         cout << i + 1 << ". Cubuk = ";
-        yaz << i + 1 << ". Çubuk = ";
+        yaz << i + 1 << ". Cubuk = ";
         cout << fixed << setprecision(6) << setw(12) << W[i];
         cout << fixed << setprecision(6) << setw(12) << P[i];
         cout << fixed << setprecision(6) << setw(12) << N[i];
@@ -291,7 +291,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Dugum Bilgileri = " << endl << endl;
-    yaz << "Düðüm Bilgileri = " << endl << endl;
+    yaz << "Dugum Bilgileri = " << endl << endl;
     cout << setw(20) << "X" << "(" << uzunlukbrm << ")";
     cout << setw(9) << "Y" << "(" << uzunlukbrm << ")";
     cout << setw(5) << "U";
@@ -312,7 +312,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < x; i++)
     {
         cout << i + 1 << ". Dugum = ";
-        yaz << i + 1 << ". Düðüm = ";
+        yaz << i + 1 << ". Dugum = ";
         cout << setw(12) << Dx[i];
         cout << setw(12) << Dy[i];
         cout << setw(5) << u[i];
@@ -327,7 +327,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Delta X ve Delta Y Degerleri = " << endl << endl;
-    yaz << "Delta X ve Delta Y Deðerleri = " << endl << endl;
+    yaz << "Delta X ve Delta Y Degerleri = " << endl << endl;
     cout << setw(20) << "Delta X" << "(" << uzunlukbrm << ")";
     cout << setw(9) << "Delta Y" << "(" << uzunlukbrm << ")" << endl;
     yaz << setw(20) << "Delta X" << "(" << uzunlukbrm << ")";
@@ -344,7 +344,7 @@ int main(int argc, char* argv[])
         delx[i] = Dx[(K[i] - 1)] - Dx[(R[i] - 1)];
         dely[i] = Dy[(K[i] - 1)] - Dy[(R[i] - 1)];
         cout << i + 1 << ". Cubuk = ";
-        yaz << i + 1 << ". Çubuk = ";
+        yaz << i + 1 << ". Cubuk = ";
         cout << fixed << setprecision(6) << setw(12) << delx[i];
         cout << fixed << setprecision(6) << setw(12) << dely[i] << endl;
         yaz << fixed << setprecision(6) << setw(12) << delx[i];
@@ -360,7 +360,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "L Degerleri = " << endl << endl;
-    yaz << "L Deðerleri = " << endl << endl;
+    yaz << "L Degerleri = " << endl << endl;
 
     for (i = 0; i < n; i++)
     {
@@ -378,7 +378,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Aci Degerleri = " << endl << endl;
-    yaz << "Açý Deðerleri = " << endl << endl;
+    yaz << "Aci Degerleri = " << endl << endl;
     for (i = 0; i < n; i++)
     {
         Aci[i] = atan(dely[i] / delx[i]);
@@ -397,7 +397,7 @@ int main(int argc, char* argv[])
         if (delx[i] > 0 && dely[i] < 0)
             Aci[i] = Aci[i] + 2 * M_PI;
         cout << fixed << setprecision(6) << setw(10) << "Derece Cinsinden Aci[" << i + 1 << "]= " << Aci[i] * 180 / M_PI << endl;
-        yaz << fixed << setprecision(6) << setw(10) << "Derece Cinsinden Acý[" << i + 1 << "]= " << Aci[i] * 180 / M_PI << endl;
+        yaz << fixed << setprecision(6) << setw(10) << "Derece Cinsinden Aci[" << i + 1 << "]= " << Aci[i] * 180 / M_PI << endl;
     }
     Dj = new int* [n];
     if (Dj == NULL)
@@ -485,12 +485,12 @@ int main(int argc, char* argv[])
     cout << endl;
     cout << "Yuklu Serbestlik Sayisi = " << endl;
     cin >> yss;
-    yaz << endl << "Yüklü Serbestlik Sayýsý = " << yss << endl << endl;
+    yaz << endl << "Yuklu Serbestlik Sayisi = " << yss << endl << endl;
     if (yss == 0)
     {
         cout << endl;
         cout << "Yuklu Serbestlik Yok" << endl;
-        yaz << "Yüklü Serbestlik Yok" << endl << endl;
+        yaz << "Yuklu Serbestlik Yok" << endl << endl;
     }
     else
     {
@@ -500,8 +500,8 @@ int main(int argc, char* argv[])
             cin >> sno;
             cout << "Yuk Degeri = " << endl;
             cin >> Pj[sno - 1];
-            yaz << "Serbestlik Numarasý =  " << sno << endl;
-            yaz << "Yük Deðeri = " << Pj[sno - 1] << endl << endl;
+            yaz << "Serbestlik Numarasi =  " << sno << endl;
+            yaz << "Yuk Degeri = " << Pj[sno - 1] << endl << endl;
         }
     }
     cout << endl;
@@ -628,7 +628,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < sd; i++)
         Qj[i] = 0;
     cout << "Toplanmis S Matrisi Verilerin Kaydedildigi Cikti Dosyasindadir. " << endl;
-    yaz << "Toplanmýþ S Matrisi = " << endl;
+    yaz << "Toplanmis S Matrisi = " << endl;
     yaz << endl;
     for (i1 = 0; i1 < sd; i1++)
     {
@@ -650,7 +650,7 @@ int main(int argc, char* argv[])
         }
     }
     cout << "Toplanmis Qj Matrisi Verilerin Kaydedildigi Cikti Dosyasindadir. " << endl;
-    yaz << "Toplanmýþ Qj Matrisi = " << endl;
+    yaz << "Toplanmis Qj Matrisi = " << endl;
     yaz << endl;
     for (i = 0; i < sd; i++)
         yaz << fixed << setprecision(6) << setw(12) << Qj[i] << endl;
@@ -665,7 +665,7 @@ int main(int argc, char* argv[])
         return 0;
     }
     cout << "Sistemin Toplam Yuk Matrisi Kaydedildigi Cikti Dosyasindadir. " << endl;
-    yaz << "Sistemin Toplam Yük Matrisi = " << endl;
+    yaz << "Sistemin Toplam Yuk Matrisi = " << endl;
     yaz << endl;
     for (i = 0; i < sd; i++)
     {
@@ -714,7 +714,7 @@ int main(int argc, char* argv[])
         }
         yaz << fixed << setw(12) << "Pivotumuz = " << pivot << endl;
         yaz << fixed << setw(12) << "Pivot Kolonumuz = " << pivotkol << endl;
-        yaz << fixed << setw(12) << "Pivot Kolonumuz Baþa Alýndý = " << endl << endl;
+        yaz << fixed << setw(12) << "Pivot Kolonumuz Basa Alindi = " << endl << endl;
         for (j = 0; j < sd; j++)
         {
             rep1 = S[j][pivotkol];
@@ -732,7 +732,7 @@ int main(int argc, char* argv[])
         Xizle[pivotkol] = Xizle[i];
         Xizle[i] = rep;
         if (pivot == 0)continue;
-        yaz << "Pivota Bölünmüþ Hali = " << endl << endl;
+        yaz << "Pivota Bolunmus Hali = " << endl << endl;
         for (j = 0; j < sd; j++)
             S[i][j] = S[i][j] / pivot;
         for (i1 = 0; i1 < sd; i1++)
@@ -750,7 +750,7 @@ int main(int argc, char* argv[])
             for (j1 = 0; j1 < sd; j1++)
                 S[j][j1] = S[i][j1] * eksiilecarp + S[j][j1];
         }
-        yaz << "Pivotumuzun Altý Sýfýrlandý = " << endl << endl;
+        yaz << "Pivotumuzun Alti Sifirlandi = " << endl << endl;
         for (i1 = 0; i1 < sd; i1++)
         {
             for (j = 0; j < sd; j++)
@@ -760,7 +760,7 @@ int main(int argc, char* argv[])
         yaz << endl;
     }
     cout << "Ust Ucgen Matrisimiz Verilerin Kaydedildigi Cikti Dosyasindadir. " << endl;
-    yaz << "Üst Üçgen Matrisimiz = " << endl << endl;
+    yaz << "Ust Ucgen Matrisimiz = " << endl << endl;
     for (i = 0; i < sd; i++)
     {
         for (j = 0; j < sd; j++)
@@ -770,7 +770,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Sistemin Toplam Yuk Matrisinin Islemler Sonucundaki Hali Verilerin Kaydedildigi Cikti Dosyasindadir. " << endl;
-    yaz << "Sistemin Toplam Yük Matrisinin Ýþlemler Sonucundaki Hali = " << endl << endl;
+    yaz << "Sistemin Toplam Yuk Matrisinin Ýslemler Sonucundaki Hali = " << endl << endl;
     for (i = 0; i < sd; i++)
         yaz << fixed << setprecision(6) << setw(10) << "Qt[" << i + 1 << "]= " << Qt[i] << endl;
     yaz << endl;
@@ -783,7 +783,7 @@ int main(int argc, char* argv[])
     }
     cout << endl;
     cout << "Sistemin Deplasmanlari = " << endl << endl;
-    yaz << "Sistemin Deplasmanlarý = " << endl << endl;
+    yaz << "Sistemin Deplasmanlari = " << endl << endl;
     cout << setw(20) << "U(" << uzunlukbrm << ")";
     cout << setw(9) << "V(" << uzunlukbrm << ")";
     cout << setw(9) << "Teta(" << "Rad)" << endl;
@@ -806,7 +806,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < x; i++)
     {
         cout << i + 1 << ". Dugum = ";
-        yaz << i + 1 << ". Düðüm = ";
+        yaz << i + 1 << ". Dugum = ";
         cout << fixed << setprecision(6) << setw(12) << X[u[i] - 1];
         cout << fixed << setprecision(6) << setw(12) << X[v[i] - 1];
         cout << fixed << setprecision(6) << setw(12) << X[teta[i] - 1] << endl;
@@ -970,7 +970,7 @@ int main(int argc, char* argv[])
     cout << endl;
     yaz << endl;
     cout << "Cubuk Ucu Kuvvetleri =" << endl << endl;
-    yaz << "Çubuk Ucu Kuvvetleri =" << endl << endl;
+    yaz << "Cubuk Ucu Kuvvetleri =" << endl << endl;
     cout << setw(18) << "Ni" << "(" << kuvvetbrm << ")";
     cout << setw(7) << "Si" << "(" << kuvvetbrm << ")";
     cout << setw(5) << "Mi" << "(" << kuvvetbrm << "x" << uzunlukbrm << ")";
@@ -993,7 +993,7 @@ int main(int argc, char* argv[])
     for (i = 0; i < n; i++)
     {
         cout << i + 1 << ". Cubuk = ";
-        yaz << i + 1 << ". Çubuk = ";
+        yaz << i + 1 << ". Cubuk = ";
         for (j = 0; j < 6; j++)
         {
             cout << setw(11) << qcubuk[i][j];
